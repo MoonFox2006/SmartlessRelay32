@@ -1,0 +1,5 @@
+dependencies:
+  espressif/cmake_utilities:
+    rules:
+    - if: target == esp32c2
+    version: ^1.1.1
