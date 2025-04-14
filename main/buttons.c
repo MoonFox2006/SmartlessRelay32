@@ -99,7 +99,8 @@ buttons_handle_t buttons_init(const buttons_config_t *buttons_cfg) {
         if (result->queue) {
             const esp_timer_create_args_t timer_args = {
                 .callback = timer_cb,
-                .arg = result
+                .arg = result,
+                .skip_unhandled_events = true
             };
 
             if (esp_timer_create(&timer_args, &result->timer) == ESP_OK) {
